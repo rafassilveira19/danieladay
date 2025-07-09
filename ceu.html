@@ -8,6 +8,7 @@
   <style>
     /* Reset mínimo */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     html, body {
       width: 100%; height: 100%;
       overflow: hidden;
@@ -16,52 +17,68 @@
       position: relative;
     }
 
-    /* Fundo giratório */
-    body {
-      position: relative;
-      overflow: hidden;
-    }
-    body::before {
-      content: "";
-      position: absolute;
-      top: -10%; left: -10%;
-      width: 120%; height: 120%;
-      background: url('imagens/ceu-dia-nascimento.png') center/cover no-repeat;
-      transform: rotate(0deg);
-      animation: skyRotate 300s linear infinite;
-      z-index: -2;
-    }
-    @keyframes skyRotate {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
+    /* Fundo: sua foto */
+   body {
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Estrelas menos densas e mais lentas */
-    .stars, .stars::after {
+/* pseudo-elemento que carrega e anima o fundo */
+body::before {
+  content: "";
+  position: absolute;
+  top: -10%; left: -10%;
+  width: 120%;
+  height: 120%;
+  background: url('imagens/ceu-dia-nascimento.png') center/cover no-repeat;
+  transform: scale(1.05);
+  animation: kenburns 20s ease-in-out infinite both;
+  z-index: -2;
+}
+
+/* mantém o overlay de estrelas e conteúdo em cima */
+.stars, .content, .voltar {
+  position: relative;
+  z-index: 1;
+}
+
+/* animação de pan + zoom */
+@keyframes kenburns {
+  0%   { transform: scale(1.05) translate(0%, 0%); }
+  25%  { transform: scale(1.1)  translate(-2%, -2%); }
+  50%  { transform: scale(1.07) translate(-1%, 1%); }
+  75%  { transform: scale(1.1)  translate(2%, -1%); }
+  100% { transform: scale(1.05) translate(0%, 0%); }
+}
+
+
+    /* Overlay de estrelas cintilantes */
+   .stars, .stars::after {
       content: '';
       position: absolute;
       top: 0; left: 0;
-      width: 200%; height: 200%;
+      width: 200%; height: 200%; 
       background: transparent url('data:image/svg+xml;utf8,\
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">\
-<circle cx="20" cy="20" r="1" fill="white" opacity="0.8"/>\
-<circle cx="100" cy="50" r="1" fill="white" opacity="0.6"/>\
-<circle cx="150" cy="140" r="1" fill="white" opacity="0.7"/>\
+<circle cx="2" cy="2" r="1" fill="white" opacity="0.8"/>\
+<circle cx="50" cy="50" r="1" fill="white" opacity="0.6"/>\
+<circle cx="120" cy="80" r="1" fill="white" opacity="0.7"/>\
+<circle cx="180" cy="150" r="1" fill="white" opacity="0.5"/>\
 </svg>') repeat;
-      animation: moveStars 120s linear infinite;
+      animation: moveStars 300s linear infinite;
       pointer-events: none;
-      z-index: -1;
     }
     .stars::after {
-      animation-duration: 180s;
-      opacity: 0.4;
-    }
-    @keyframes moveStars {
-      from { transform: translate(0, 0); }
-      to   { transform: translate(-50%, -50%); }
+      animation-duration: 120s;
+      opacity: 0.5;
     }
 
-    /* Conteúdo central */
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-50%, -50%); }
+    }
+
+    /* Texto central mágico */
     .content {
       position: absolute;
       top: 50%; left: 50%;
@@ -71,24 +88,23 @@
       padding: 30px 40px;
       border-radius: 16px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      z-index: 1;
     }
     .content h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      text-shadow: 0 0 8px rgba(255,255,255,0.7);
-    }
-    .content p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      text-shadow: 0 0 6px rgba(255,255,255,0.5);
-    }
+  font-size: 1.8rem; 
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255,255,255,0.7);
+}
+.content p {
+  font-size: 1rem; 
+  line-height: 1.4;
+  text-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
 
-    /* Botão voltar */
+
     .voltar {
       position: absolute;
-      bottom: 20px; left: 20px;
-      z-index: 1;
+      bottom: 20px;
+      left: 20px;
     }
     .voltar a {
       display: inline-flex;
@@ -109,27 +125,25 @@
 
     @media(max-width: 480px) {
       .content {
-        width: 90%; padding: 20px;
+        width: 90%;
+        padding: 20px;
       }
       .content h1 { font-size: 2rem; }
       .content p { font-size: 1rem; }
-      .voltar { bottom: 10px; left: 10px; }
-      .voltar a { padding: 6px 12px; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- camadas de estrelas para profundidade -->
+  
   <div class="stars"></div>
   <div class="stars"></div>
 
   <div class="content">
-    <h1>O Céu em 12 de Julho de 2025</h1>
+    <h1>O Céu em 12 de Julho de 2005 às 07h20</h1>
     <p>
-      No exato momento em que você chegou, o firmamento<br />
+      No exato momento em que você chegou, o céu<br />
       brilhava assim: a Via Láctea cortando o céu,<br />
-      a Lua cheia iluminando nossas noites,<br />
       e cada estrela guardando um desejo só seu.
     </p>
   </div>
