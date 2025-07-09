@@ -56,8 +56,8 @@
     }
 
    .voltar {
-  margin-top: 40px; /* aumenta esse valor para afastar mais */
-  text-align: left; /* se quiser mais para a esquerda */
+  margin-top: 40px; 
+  text-align: left;
 }
 
 
@@ -112,7 +112,7 @@
       }
 
       .voltar a {
-        padding: 8px 18px;
+        padding: 8px 8px;
         font-size: 0.9rem;
       }
     }
@@ -121,6 +121,12 @@
 <body>
 
 <main id="conteudo">
+  <audio controls autoplay loop>
+  <source src="musica/planos.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+
+</audio>
+
   <h3>Dani,</h3>
 
   <p>
@@ -142,13 +148,13 @@ E não falo só por minha opinião, mas por quantas outras pessoas ao seu redor 
   <div class="assinatura">Com muito amor, Rafa</div>
 
   <div class="voltar">
-    <a href="index.html">Voltar ao menu</a>
+    <a href="index.html">← Voltar ao menu</a>
   </div>
 </main>
 
 <script>
-  const senhaCorreta = "danidiva";
-  const tentativa = prompt("Digite a senha para ler a carta:");
+  const senhaCorreta = "amanhecer";
+  const tentativa = prompt("Digite a senha para ler a carta. Dica: primeira música do BK que você colocou pra eu ouvir.");
 
   if (tentativa === senhaCorreta) {
     document.getElementById("conteudo").style.display = "block";

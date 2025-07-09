@@ -38,7 +38,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 600;
       text-decoration: none;
-      padding: 10px 24px;
+      padding: 10px 10px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: background-color 0.3s ease, transform 0.2s ease;
@@ -76,7 +76,6 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -174,11 +173,11 @@
 
   <header>
     <h1>Galeria de Memórias</h1>
-    <a href="index.html">Voltar ao Menu</a>
+    <a href="index.html">← Voltar ao menu</a>
   </header>
 
   <main id="galeria">
-    <!-- Fotos geradas pelo JS -->
+ 
   </main>
 
   <div class="modal" id="modal">
@@ -194,7 +193,7 @@
   </div>
 
   <script>
-    // Fotos e legendas - substitua URLs e textos conforme quiser
+    
     const fotos = [
       { src: 'imagens/foto1.png', legenda: 'Nosso primeiro sorriso juntos' },
       { src: 'imagens/foto2.png', legenda: 'Um dia inesquecível na praia' },
@@ -216,7 +215,7 @@
 
     let currentIndex = 0;
 
-    // Cria as imagens da galeria
+
     fotos.forEach((foto, i) => {
       const div = document.createElement('div');
       div.className = 'foto';
@@ -232,7 +231,7 @@
       currentIndex = index;
       updateModal();
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // trava scroll fundo
+      document.body.style.overflow = 'hidden'; 
     }
 
     function closeModal() {
@@ -261,12 +260,11 @@
     prevBtn.addEventListener('click', prevPhoto);
     nextBtn.addEventListener('click', nextPhoto);
 
-    // Fecha modal ao clicar fora do conteúdo
     modal.addEventListener('click', e => {
       if (e.target === modal) closeModal();
     });
 
-    // Fecha modal com ESC
+ 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
       if (e.key === 'ArrowLeft' && modal.classList.contains('active')) prevPhoto();

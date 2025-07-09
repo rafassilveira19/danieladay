@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mensagens para Daniela</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lora&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0; padding: 20px;
+      background: #f9f5ee;
+      font-family: 'Lora', serif;
+      color: #5a4a24;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+      background: #fffaf1;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #7f5e1a;
+    }
+
+    .mensagem {
+      background: #fdf7ed;
+      border-left: 4px solid #c7a55c;
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      box-shadow: 2px 2px 10px rgba(199, 165, 92, 0.2);
+      line-height: 1.6;
+      font-size: 1.1rem;
+      user-select: text;
+      white-space: pre-line;
+    }
+
+    .autor {
+      margin-top: 10px;
+      text-align: right;
+      font-style: italic;
+      font-weight: 600;
+      color: #a08040;
+      font-size: 1rem;
+      user-select: text;
+    }
+
+    .video-container {
+      margin-top: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(199, 165, 92, 0.3);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 280px;
+      border: none;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .voltar {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .voltar a {
+      background-color: #d9b38c;
+      color: #4b2e05;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      padding: 10px 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .voltar a:hover {
+      background-color: #c79a72;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .mensagem {
+        font-size: 1rem;
+        padding: 14px 20px;
+      }
+      .video-container iframe {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <h1>Mensagens para Daniela</h1>
+
+  <div class="mensagem">
+    Dani, você é uma inspiração para todos nós. Sua força e alegria iluminam nossos dias.  
+    <div class="autor">— Lucas</div>
+  </div>
+
+  <div class="mensagem">
+    Que você continue sempre espalhando essa luz tão linda que só você tem.  
+    <div class="autor">— Maria</div>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Vídeo de mensagem" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="mensagem">
+    Obrigado por ser essa pessoa incrível e amiga que está sempre ao nosso lado.  
+    <div class="autor">— Ana</div>
+  </div>
+
+  <div class="voltar">
+    <a href="index.html">← Voltar ao menu</a>
+  </div>
+</main>
+
+</body>
+</html>

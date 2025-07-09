@@ -6,7 +6,7 @@
   <title>O Céu no Dia que Você Nasceu</title>
   <link rel="icon" href="imagens/icon.png" type="image/png" />
   <style>
-    /* Reset mínimo */
+   
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
@@ -17,13 +17,13 @@
       position: relative;
     }
 
-    /* Fundo: sua foto */
+    
    body {
   position: relative;
   overflow: hidden;
 }
 
-/* pseudo-elemento que carrega e anima o fundo */
+
 body::before {
   content: "";
   position: absolute;
@@ -36,13 +36,13 @@ body::before {
   z-index: -2;
 }
 
-/* mantém o overlay de estrelas e conteúdo em cima */
+
 .stars, .content, .voltar {
   position: relative;
   z-index: 1;
 }
 
-/* animação de pan + zoom */
+
 @keyframes kenburns {
   0%   { transform: scale(1.05) translate(0%, 0%); }
   25%  { transform: scale(1.1)  translate(-2%, -2%); }
@@ -52,7 +52,7 @@ body::before {
 }
 
 
-    /* Overlay de estrelas cintilantes */
+   
    .stars, .stars::after {
       content: '';
       position: absolute;
@@ -78,7 +78,7 @@ body::before {
       to { transform: translate(-50%, -50%); }
     }
 
-    /* Texto central mágico */
+  
     .content {
       position: absolute;
       top: 50%; left: 50%;
