@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta para Daniela</title>
+  <link rel="icon" href="imagens/icon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lora:ital,wght@0,400;1,300&family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f5efe6;
+      font-family: 'Lora', serif;
+      color: #5a4a24;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    main {
+      background: #fffaf1;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      max-width: 760px;
+      width: 100%;
+      padding: 40px;
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+      position: relative;
+      display: none;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #7f5e1a;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      white-space: pre-line;
+      margin-bottom: 1.2rem;
+    }
+
+    .assinatura {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      text-align: right;
+      margin-top: 30px;
+    }
+
+   .voltar {
+  margin-top: 40px; /* aumenta esse valor para afastar mais */
+  text-align: left; /* se quiser mais para a esquerda */
+}
+
+
+.voltar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f5d7b5, #e6ba91);
+  color: #4b2e05;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.voltar a:hover {
+  background: linear-gradient(135deg, #f3cfa5, #ddb181);
+  transform: scale(1.05);
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+    
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 30px 20px;
+      }
+
+      h3 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .assinatura {
+        font-size: 1.6rem;
+      }
+
+      .voltar {
+        bottom: 10px;
+        left: 10px;
+      }
+
+      .voltar a {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<main id="conteudo">
+  <h3>Dani,</h3>
+
+  <p>
+Primeiramente gostaria de agradecer por continuar na minha vida. Mesmo sendo mais nova do que eu, você não sabe o quanto me ensinou (e continua ensinando).  
+Nunca vou me esquecer a primeira vez que te vi, porque eu nunca imaginei que você seria o que é pra mim hoje.  
+Acho incrível a forma que eu me afeiçoei a você já no primeiro dia. Não houve maldade, e sim um cuidado de querer te proteger sempre. Saiba que mesmo você não permitindo tanta proximidade hoje, cê pode me chamar quando precisar. Você sabe que estou sempre disponível para aqueles que eu amo.  
+
+Aliás, falando de amor, eu falava que eu sou a única pessoa capaz de te amar do jeito que você merece, porém eu estava errado. Você é uma pessoa muito fácil de amar.  
+Você é uma pessoa encantadora. Você é humilde, simpática, engraçada, divertida, autêntica... É uma diva.  
+E eu vou continuar te amando da forma que você merece, porque o amor não precisa ser romântico pra ser sincero e intenso.  
+
+Eu admiro muito quem você é e quem você está se tornando.  
+Você sempre foi muito forte e demonstra isso o tempo todo, então se algum dia te disserem ou fizerem você se sentir o contrário disso, não dê ouvidos, porque não é verdade!  
+
+A vida vai continuar com seus altos e baixos, mas não deixe que isso mude a sua essência, porque é a essência mais linda que já vi na vida.  
+E não falo só por minha opinião, mas por quantas outras pessoas ao seu redor amam sua presença.  
+  </p>
+
+  <div class="assinatura">Com muito amor, Rafa</div>
+
+  <div class="voltar">
+    <a href="index.html">Voltar ao menu</a>
+  </div>
+</main>
+
+<script>
+  const senhaCorreta = "danidiva";
+  const tentativa = prompt("Digite a senha para ler a carta:");
+
+  if (tentativa === senhaCorreta) {
+    document.getElementById("conteudo").style.display = "block";
+  } else {
+    document.body.innerHTML = `
+      <div style="text-align: center; padding: 40px; font-family: 'Lora', serif; color: #4b2e05;">
+        <h2>Ops! Senha incorreta.</h2>
+        <p>Recarregue a página e tente novamente 💛</p>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
