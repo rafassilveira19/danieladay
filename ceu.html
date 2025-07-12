@@ -153,4 +153,21 @@ body::before {
   </div>
 
 </body>
+
+<script>
+  
+   // Enviar aviso de acesso para o Zapier
+  fetch("https://hooks.zapier.com/hooks/catch/23758043/u2yvr0d/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      pagina: window.location.pathname,
+      horario: new Date().toLocaleString(),
+      navegador: navigator.userAgent
+    })
+  });
+
+  </script>
 </html>
